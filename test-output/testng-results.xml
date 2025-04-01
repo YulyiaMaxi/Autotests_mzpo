@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-31T17:40:12 MSK" name="Command line suite" finished-at="2025-03-31T17:45:01 MSK" duration-ms="288686">
+    <groups>
+    </groups>
+    <test started-at="2025-03-31T17:40:12 MSK" name="Command line test" finished-at="2025-03-31T17:45:01 MSK" duration-ms="288686">
+      <class name="ru.education.tests.EducationTests">
+        <test-method is-config="true" signature="globalLogs(org.testng.ITestContext)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="globalLogs" finished-at="2025-03-31T17:40:12 MSK" duration-ms="319" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@65753724]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalLogs -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="logTestStart" finished-at="2025-03-31T17:40:12 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.education.tests.EducationTests.TestBasketApplyEDU()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@58aa5c94]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="setUp" finished-at="2025-03-31T17:40:12 MSK" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="setTestPassed" finished-at="2025-03-31T17:40:12 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestBasketApplyEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="TestBasketApplyEDU" finished-at="2025-03-31T17:41:15 MSK" duration-ms="62345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestBasketApplyEDU -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="afterMethod" finished-at="2025-03-31T17:41:15 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestBasketApplyEDU status=SUCCESS method=EducationTests.TestBasketApplyEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="tearDown" finished-at="2025-03-31T17:41:15 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="logTestStart" finished-at="2025-03-31T17:41:15 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.education.tests.EducationTests.TestBasketPayEDU()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5d27b4c1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestBasketPayEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="TestBasketPayEDU" finished-at="2025-03-31T17:42:12 MSK" duration-ms="57330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestBasketPayEDU -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="setUp" finished-at="2025-03-31T17:41:15 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="setTestPassed" finished-at="2025-03-31T17:41:15 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="afterMethod" finished-at="2025-03-31T17:42:12 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestBasketPayEDU status=SUCCESS method=EducationTests.TestBasketPayEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="tearDown" finished-at="2025-03-31T17:42:12 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="logTestStart" finished-at="2025-03-31T17:42:12 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.education.tests.EducationTests.TestCallBackEDU()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@50df37eb]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="setUp" finished-at="2025-03-31T17:42:12 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="setTestPassed" finished-at="2025-03-31T17:42:12 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestCallBackEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="TestCallBackEDU" finished-at="2025-03-31T17:43:08 MSK" duration-ms="55675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCallBackEDU -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="afterMethod" finished-at="2025-03-31T17:43:08 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCallBackEDU status=SUCCESS method=EducationTests.TestCallBackEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="tearDown" finished-at="2025-03-31T17:43:08 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="setTestPassed" finished-at="2025-03-31T17:43:08 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="logTestStart" finished-at="2025-03-31T17:43:08 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.education.tests.EducationTests.TestConsultEDU()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4b508371]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestConsultEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="TestConsultEDU" finished-at="2025-03-31T17:44:05 MSK" duration-ms="56941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestConsultEDU -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="setUp" finished-at="2025-03-31T17:43:08 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="afterMethod" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestConsultEDU status=SUCCESS method=EducationTests.TestConsultEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="tearDown" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="logTestStart" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.education.tests.EducationTests.TestDiscount15EDU()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@41143873]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="setTestPassed" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="setUp" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="TestDiscount15EDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="TestDiscount15EDU" finished-at="2025-03-31T17:45:01 MSK" duration-ms="55998" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestDiscount15EDU -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:45:01 MSK" name="afterMethod" finished-at="2025-03-31T17:45:01 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestDiscount15EDU status=SUCCESS method=EducationTests.TestDiscount15EDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:45:01 MSK" name="tearDown" finished-at="2025-03-31T17:45:01 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ru.education.tests.EducationTests -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

@@ -1,0 +1,30 @@
+
+
+ ! путь к открытию и заполнению форм лежит через главную страницу ! кроме мцпо-с.
+
+ ?supertester - этот путь прибавляем к урл, чтобы получить сайт без модального окна и без ЧП
+
+тестовые метки лежат здесь - https://docs.google.com/spreadsheets/d/1dDFd_D9g5cAdUOfy5HEABAI4k7jEysp3Mr0lXCCvilE/edit?gid=0#gid=0
+
+настройки все сделаны под джава 17
+
+при прогоне тестов на мирк 1 раз прогоняем 1 любой тест и принимаем вручную куки и закоываем мод окно ДОД (если есть). Папку таргет не удаляем. Второй раз прогоняем уже все тесты.
+формы ДОД тестируем только в период прохождения ДОД
+
+форму Мероприятие (дод или пробный урок) тестируем через ДОД. Или через пробный урок - но тогда меняем данные в DodMIRKHelper  - строка 30
+
+Для формирования отчета
+
+allure generate --clean
+allure open
+Для написания allure history-
+
+Make sure you have the previous report generated in the allure-report directory.
+
+Remove the allure-results directory.
+
+Run the tests.
+
+Copy the allure-report/history subdirectory to allure-results/history. не удалять, а именно копи
+
+Generate the new report. allure generate --clean
