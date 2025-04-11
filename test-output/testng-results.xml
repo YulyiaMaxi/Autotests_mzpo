@@ -1,24 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="28" passed="28" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-31T17:40:12 MSK" name="Command line suite" finished-at="2025-03-31T17:45:01 MSK" duration-ms="288686">
+  <suite started-at="2025-04-11T09:27:41 MSK" name="Command line suite" finished-at="2025-04-11T09:55:02 MSK" duration-ms="1640858">
     <groups>
     </groups>
-    <test started-at="2025-03-31T17:40:12 MSK" name="Command line test" finished-at="2025-03-31T17:45:01 MSK" duration-ms="288686">
-      <class name="ru.education.tests.EducationTests">
-        <test-method is-config="true" signature="globalLogs(org.testng.ITestContext)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="globalLogs" finished-at="2025-03-31T17:40:12 MSK" duration-ms="319" status="PASS">
+    <test started-at="2025-04-11T09:27:41 MSK" name="Command line test" finished-at="2025-04-11T09:55:02 MSK" duration-ms="1640858">
+      <class name="ru.mirk.tests.MIRKTests">
+        <test-method is-config="true" signature="globalLogs(org.testng.ITestContext)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:27:42 MSK" name="globalLogs" finished-at="2025-04-11T09:27:42 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@65753724]]>
+                <![CDATA[org.testng.TestRunner@1bff4cb9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- globalLogs -->
-        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="logTestStart" finished-at="2025-03-31T17:40:12 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:32:33 MSK" name="setUp" finished-at="2025-04-11T09:32:33 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:32:33 MSK" name="logTestStart" finished-at="2025-04-11T09:32:33 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestApplyToCourseMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7b6d88d1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:32:33 MSK" name="setTestPassed" finished-at="2025-04-11T09:32:33 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestApplyToCourseMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:32:33 MSK" name="TestApplyToCourseMIRK" finished-at="2025-04-11T09:33:29 MSK" duration-ms="55982" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestApplyToCourseMIRK -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:33:29 MSK" name="logTestStart" finished-at="2025-04-11T09:33:29 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestCallBackMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@14cf30b3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestCallBackMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:33:29 MSK" name="TestCallBackMIRK" finished-at="2025-04-11T09:34:24 MSK" duration-ms="54755" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCallBackMIRK -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:33:29 MSK" name="setTestPassed" finished-at="2025-04-11T09:33:29 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:34:24 MSK" name="logTestStart" finished-at="2025-04-11T09:34:24 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestCartMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@38159192]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestCartMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:34:24 MSK" name="TestCartMIRK" finished-at="2025-04-11T09:35:23 MSK" duration-ms="58614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCartMIRK -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:34:24 MSK" name="setTestPassed" finished-at="2025-04-11T09:34:24 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:35:23 MSK" name="logTestStart" finished-at="2025-04-11T09:35:23 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestConsultForFreeMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@363d3958]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:35:23 MSK" name="setTestPassed" finished-at="2025-04-11T09:35:23 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestConsultForFreeMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:35:23 MSK" name="TestConsultForFreeMIRK" finished-at="2025-04-11T09:36:16 MSK" duration-ms="53333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestConsultForFreeMIRK -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:36:16 MSK" name="logTestStart" finished-at="2025-04-11T09:36:16 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestDemoMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2181144e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:36:16 MSK" name="setTestPassed" finished-at="2025-04-11T09:36:16 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestDemoMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:36:16 MSK" name="TestDemoMIRK" finished-at="2025-04-11T09:37:11 MSK" duration-ms="54824" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestDemoMIRK -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:37:11 MSK" name="logTestStart" finished-at="2025-04-11T09:37:11 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestDodMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4ca6e265]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestDodMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:37:11 MSK" name="TestDodMIRK" finished-at="2025-04-11T09:38:05 MSK" duration-ms="54266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestDodMIRK -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:37:11 MSK" name="setTestPassed" finished-at="2025-04-11T09:37:11 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:38:05 MSK" name="logTestStart" finished-at="2025-04-11T09:38:05 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestGetProf20MIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@582b6362]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestGetProf20MIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:38:05 MSK" name="TestGetProf20MIRK" finished-at="2025-04-11T09:39:00 MSK" duration-ms="54976" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestGetProf20MIRK -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:38:05 MSK" name="setTestPassed" finished-at="2025-04-11T09:38:05 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestGiftCertMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:39:00 MSK" name="TestGiftCertMIRK" finished-at="2025-04-11T09:40:04 MSK" duration-ms="64410" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestGiftCertMIRK -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:39:00 MSK" name="logTestStart" finished-at="2025-04-11T09:39:00 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestGiftCertMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@70376c6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:39:00 MSK" name="setTestPassed" finished-at="2025-04-11T09:39:00 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:40:04 MSK" name="logTestStart" finished-at="2025-04-11T09:40:04 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestNeedConsultMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2e89310c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestNeedConsultMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:40:04 MSK" name="TestNeedConsultMIRK" finished-at="2025-04-11T09:41:00 MSK" duration-ms="55430" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestNeedConsultMIRK -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:40:04 MSK" name="setTestPassed" finished-at="2025-04-11T09:40:04 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:41:00 MSK" name="logTestStart" finished-at="2025-04-11T09:41:00 MSK" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestOrderConsultMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@55c75b72]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:41:00 MSK" name="setTestPassed" finished-at="2025-04-11T09:41:00 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestOrderConsultMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:41:00 MSK" name="TestOrderConsultMIRK" finished-at="2025-04-11T09:41:53 MSK" duration-ms="53403" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestOrderConsultMIRK -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:41:53 MSK" name="logTestStart" finished-at="2025-04-11T09:41:53 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mirk.tests.MIRKTests.TestWrite2UstMIRK()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@567412db]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:41:53 MSK" name="setTestPassed" finished-at="2025-04-11T09:41:53 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestWrite2UstMIRK()[pri:0, instance:ru.mirk.tests.MIRKTests@48f2bd5b]" started-at="2025-04-11T09:41:53 MSK" name="TestWrite2UstMIRK" finished-at="2025-04-11T09:42:47 MSK" duration-ms="53464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestWrite2UstMIRK -->
+      </class> <!-- ru.mirk.tests.MIRKTests -->
+      <class name="ru.education.tests.EducationTests">
+        <test-method is-config="true" signature="globalLogs(org.testng.ITestContext)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:27:41 MSK" name="globalLogs" finished-at="2025-04-11T09:27:42 MSK" duration-ms="405" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1bff4cb9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalLogs -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:27:42 MSK" name="setUp" finished-at="2025-04-11T09:27:42 MSK" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:27:42 MSK" name="logTestStart" finished-at="2025-04-11T09:27:42 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,41 +312,33 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Object;@58aa5c94]]>
+                <![CDATA[[Ljava.lang.Object;@4addfb95]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestStart -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="setUp" finished-at="2025-03-31T17:40:12 MSK" duration-ms="11" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="setTestPassed" finished-at="2025-03-31T17:40:12 MSK" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:27:42 MSK" name="setTestPassed" finished-at="2025-04-11T09:27:42 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setTestPassed -->
-        <test-method signature="TestBasketApplyEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:40:12 MSK" name="TestBasketApplyEDU" finished-at="2025-03-31T17:41:15 MSK" duration-ms="62345" status="PASS">
+        <test-method signature="TestBasketApplyEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:27:42 MSK" name="TestBasketApplyEDU" finished-at="2025-04-11T09:28:44 MSK" duration-ms="61958" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestBasketApplyEDU -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="afterMethod" finished-at="2025-03-31T17:41:15 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:28:44 MSK" name="afterMethod" finished-at="2025-04-11T09:28:44 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TestBasketApplyEDU status=SUCCESS method=EducationTests.TestBasketApplyEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+                <![CDATA[[TestResult name=TestBasketApplyEDU status=SUCCESS method=EducationTests.TestBasketApplyEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="tearDown" finished-at="2025-03-31T17:41:15 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="logTestStart" finished-at="2025-03-31T17:41:15 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:28:44 MSK" name="logTestStart" finished-at="2025-04-11T09:28:44 MSK" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -70,41 +347,22 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Object;@5d27b4c1]]>
+                <![CDATA[[Ljava.lang.Object;@2d3bb293]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestStart -->
-        <test-method signature="TestBasketPayEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="TestBasketPayEDU" finished-at="2025-03-31T17:42:12 MSK" duration-ms="57330" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestBasketPayEDU -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="setUp" finished-at="2025-03-31T17:41:15 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:41:15 MSK" name="setTestPassed" finished-at="2025-03-31T17:41:15 MSK" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:28:44 MSK" name="setTestPassed" finished-at="2025-04-11T09:28:44 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setTestPassed -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="afterMethod" finished-at="2025-03-31T17:42:12 MSK" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=TestBasketPayEDU status=SUCCESS method=EducationTests.TestBasketPayEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="TestBasketPayEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:28:44 MSK" name="TestBasketPayEDU" finished-at="2025-04-11T09:29:41 MSK" duration-ms="57252" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="tearDown" finished-at="2025-03-31T17:42:12 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="logTestStart" finished-at="2025-03-31T17:42:12 MSK" duration-ms="0" status="PASS">
+        </test-method> <!-- TestBasketPayEDU -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:29:41 MSK" name="logTestStart" finished-at="2025-04-11T09:29:41 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -113,45 +371,44 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Object;@50df37eb]]>
+                <![CDATA[[Ljava.lang.Object;@4248608d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestStart -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="setUp" finished-at="2025-03-31T17:42:12 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="setTestPassed" finished-at="2025-03-31T17:42:12 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setTestPassed -->
-        <test-method signature="TestCallBackEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:42:12 MSK" name="TestCallBackEDU" finished-at="2025-03-31T17:43:08 MSK" duration-ms="55675" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCallBackEDU -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="afterMethod" finished-at="2025-03-31T17:43:08 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:29:41 MSK" name="afterMethod" finished-at="2025-04-11T09:29:41 MSK" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TestCallBackEDU status=SUCCESS method=EducationTests.TestCallBackEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+                <![CDATA[[TestResult name=TestBasketPayEDU status=SUCCESS method=EducationTests.TestBasketPayEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="tearDown" finished-at="2025-03-31T17:43:08 MSK" duration-ms="1" status="PASS">
+        <test-method signature="TestCallBackEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:29:41 MSK" name="TestCallBackEDU" finished-at="2025-04-11T09:30:38 MSK" duration-ms="57285" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="setTestPassed" finished-at="2025-03-31T17:43:08 MSK" duration-ms="0" status="PASS">
+        </test-method> <!-- TestCallBackEDU -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:29:41 MSK" name="setTestPassed" finished-at="2025-04-11T09:29:41 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setTestPassed -->
-        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="logTestStart" finished-at="2025-03-31T17:43:08 MSK" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:30:38 MSK" name="afterMethod" finished-at="2025-04-11T09:30:38 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCallBackEDU status=SUCCESS method=EducationTests.TestCallBackEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:30:38 MSK" name="logTestStart" finished-at="2025-04-11T09:30:38 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -160,37 +417,33 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Object;@4b508371]]>
+                <![CDATA[[Ljava.lang.Object;@34dc40d5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestStart -->
-        <test-method signature="TestConsultEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="TestConsultEDU" finished-at="2025-03-31T17:44:05 MSK" duration-ms="56941" status="PASS">
+        <test-method signature="TestConsultEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:30:38 MSK" name="TestConsultEDU" finished-at="2025-04-11T09:31:35 MSK" duration-ms="56784" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestConsultEDU -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:43:08 MSK" name="setUp" finished-at="2025-03-31T17:43:08 MSK" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:30:38 MSK" name="setTestPassed" finished-at="2025-04-11T09:30:38 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="afterMethod" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:31:35 MSK" name="afterMethod" finished-at="2025-04-11T09:31:35 MSK" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TestConsultEDU status=SUCCESS method=EducationTests.TestConsultEDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+                <![CDATA[[TestResult name=TestConsultEDU status=SUCCESS method=EducationTests.TestConsultEDU()[pri:0, instance:ru.education.tests.EducationTests@68999068] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="tearDown" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="logTestStart" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:31:35 MSK" name="logTestStart" finished-at="2025-04-11T09:31:35 MSK" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -199,41 +452,478 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.Object;@41143873]]>
+                <![CDATA[[Ljava.lang.Object;@11f81488]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestStart -->
-        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="setTestPassed" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:31:35 MSK" name="setTestPassed" finished-at="2025-04-11T09:31:35 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setTestPassed -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="setUp" finished-at="2025-03-31T17:44:05 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="TestDiscount15EDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:44:05 MSK" name="TestDiscount15EDU" finished-at="2025-03-31T17:45:01 MSK" duration-ms="55998" status="PASS">
+        <test-method signature="TestDiscount15EDU()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:31:35 MSK" name="TestDiscount15EDU" finished-at="2025-04-11T09:32:33 MSK" duration-ms="58136" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDiscount15EDU -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:45:01 MSK" name="afterMethod" finished-at="2025-03-31T17:45:01 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:32:33 MSK" name="afterMethod" finished-at="2025-04-11T09:32:33 MSK" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TestDiscount15EDU status=SUCCESS method=EducationTests.TestDiscount15EDU()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7] output={null}]]]>
+                <![CDATA[[TestResult name=TestDiscount15EDU status=SUCCESS method=EducationTests.TestDiscount15EDU()[pri:0, instance:ru.education.tests.EducationTests@68999068] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@3911c2a7]" started-at="2025-03-31T17:45:01 MSK" name="tearDown" finished-at="2025-03-31T17:45:01 MSK" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.education.tests.EducationTests@68999068]" started-at="2025-04-11T09:32:33 MSK" name="tearDown" finished-at="2025-04-11T09:32:33 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- ru.education.tests.EducationTests -->
+      <class name="ru.mzpo.tests.MzpoTests">
+        <test-method is-config="true" signature="globalLogs(org.testng.ITestContext)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:27:42 MSK" name="globalLogs" finished-at="2025-04-11T09:27:42 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1bff4cb9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalLogs -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:42:47 MSK" name="setUp" finished-at="2025-04-11T09:42:47 MSK" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:42:47 MSK" name="logTestStart" finished-at="2025-04-11T09:42:47 MSK" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.Test13HardChoice_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@61a7930e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="Test13HardChoice_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:42:47 MSK" name="Test13HardChoice_MZPO" finished-at="2025-04-11T09:43:42 MSK" duration-ms="55305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test13HardChoice_MZPO -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:42:47 MSK" name="setTestPassed" finished-at="2025-04-11T09:42:47 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:43:42 MSK" name="afterMethod" finished-at="2025-04-11T09:43:42 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Test13HardChoice_MZPO status=SUCCESS method=MzpoTests.Test13HardChoice_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:43:42 MSK" name="logTestStart" finished-at="2025-04-11T09:43:42 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestBasketPay_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@60eacbbf]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestBasketPay_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:43:42 MSK" name="TestBasketPay_MZPO" finished-at="2025-04-11T09:44:36 MSK" duration-ms="53537" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestBasketPay_MZPO -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:43:42 MSK" name="setTestPassed" finished-at="2025-04-11T09:43:42 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:44:36 MSK" name="afterMethod" finished-at="2025-04-11T09:44:36 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestBasketPay_MZPO status=SUCCESS method=MzpoTests.TestBasketPay_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:44:36 MSK" name="logTestStart" finished-at="2025-04-11T09:44:36 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestCallBack_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@36e6e59f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:44:36 MSK" name="setTestPassed" finished-at="2025-04-11T09:44:36 MSK" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestCallBack_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:44:36 MSK" name="TestCallBack_MZPO" finished-at="2025-04-11T09:45:31 MSK" duration-ms="55734" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCallBack_MZPO -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:45:31 MSK" name="afterMethod" finished-at="2025-04-11T09:45:31 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestCallBack_MZPO status=SUCCESS method=MzpoTests.TestCallBack_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:45:31 MSK" name="logTestStart" finished-at="2025-04-11T09:45:31 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestConsult_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@676beb9f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestConsult_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:45:31 MSK" name="TestConsult_MZPO" finished-at="2025-04-11T09:46:27 MSK" duration-ms="55307" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestConsult_MZPO -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:45:31 MSK" name="setTestPassed" finished-at="2025-04-11T09:45:31 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:46:27 MSK" name="afterMethod" finished-at="2025-04-11T09:46:27 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestConsult_MZPO status=SUCCESS method=MzpoTests.TestConsult_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="TestDiscount_15_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:46:27 MSK" name="TestDiscount_15_MZPO" finished-at="2025-04-11T09:47:22 MSK" duration-ms="55343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestDiscount_15_MZPO -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:46:27 MSK" name="setTestPassed" finished-at="2025-04-11T09:46:27 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:46:27 MSK" name="logTestStart" finished-at="2025-04-11T09:46:27 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestDiscount_15_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3a892b9f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:47:22 MSK" name="afterMethod" finished-at="2025-04-11T09:47:22 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestDiscount_15_MZPO status=SUCCESS method=MzpoTests.TestDiscount_15_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:47:22 MSK" name="logTestStart" finished-at="2025-04-11T09:47:22 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestFeedBack_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@c88a842]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestFeedBack_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:47:22 MSK" name="TestFeedBack_MZPO" finished-at="2025-04-11T09:48:18 MSK" duration-ms="55662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestFeedBack_MZPO -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:47:22 MSK" name="setTestPassed" finished-at="2025-04-11T09:47:22 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:48:18 MSK" name="afterMethod" finished-at="2025-04-11T09:48:18 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestFeedBack_MZPO status=SUCCESS method=MzpoTests.TestFeedBack_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:48:18 MSK" name="setTestPassed" finished-at="2025-04-11T09:48:18 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:48:18 MSK" name="logTestStart" finished-at="2025-04-11T09:48:18 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestGiftCert_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@d436e51]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method signature="TestGiftCert_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:48:18 MSK" name="TestGiftCert_MZPO" finished-at="2025-04-11T09:49:51 MSK" duration-ms="93726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestGiftCert_MZPO -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:49:51 MSK" name="afterMethod" finished-at="2025-04-11T09:49:51 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestGiftCert_MZPO status=SUCCESS method=MzpoTests.TestGiftCert_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:49:51 MSK" name="logTestStart" finished-at="2025-04-11T09:49:51 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestNMO_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@35cc5b75]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:49:51 MSK" name="setTestPassed" finished-at="2025-04-11T09:49:51 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestNMO_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:49:51 MSK" name="TestNMO_MZPO" finished-at="2025-04-11T09:50:45 MSK" duration-ms="54072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestNMO_MZPO -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:50:45 MSK" name="afterMethod" finished-at="2025-04-11T09:50:45 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestNMO_MZPO status=SUCCESS method=MzpoTests.TestNMO_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:50:45 MSK" name="logTestStart" finished-at="2025-04-11T09:50:45 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestOpenDay_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@466a5b80]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:50:45 MSK" name="setTestPassed" finished-at="2025-04-11T09:50:45 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestOpenDay_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:50:45 MSK" name="TestOpenDay_MZPO" finished-at="2025-04-11T09:52:20 MSK" duration-ms="94903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestOpenDay_MZPO -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:52:20 MSK" name="afterMethod" finished-at="2025-04-11T09:52:20 MSK" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestOpenDay_MZPO status=SUCCESS method=MzpoTests.TestOpenDay_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:52:20 MSK" name="logTestStart" finished-at="2025-04-11T09:52:20 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestSportPaket_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@f6921b7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:52:20 MSK" name="setTestPassed" finished-at="2025-04-11T09:52:20 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestSportPaket_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:52:20 MSK" name="TestSportPaket_MZPO" finished-at="2025-04-11T09:53:14 MSK" duration-ms="53794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSportPaket_MZPO -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:53:14 MSK" name="afterMethod" finished-at="2025-04-11T09:53:14 MSK" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestSportPaket_MZPO status=SUCCESS method=MzpoTests.TestSportPaket_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:53:14 MSK" name="logTestStart" finished-at="2025-04-11T09:53:14 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestTrialLesson_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@19cee7ed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:53:14 MSK" name="setTestPassed" finished-at="2025-04-11T09:53:14 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method signature="TestTrialLesson_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:53:14 MSK" name="TestTrialLesson_MZPO" finished-at="2025-04-11T09:54:08 MSK" duration-ms="53515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTrialLesson_MZPO -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:54:08 MSK" name="afterMethod" finished-at="2025-04-11T09:54:08 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestTrialLesson_MZPO status=SUCCESS method=MzpoTests.TestTrialLesson_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="TestWrite2Us_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:54:08 MSK" name="TestWrite2Us_MZPO" finished-at="2025-04-11T09:55:02 MSK" duration-ms="54460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestWrite2Us_MZPO -->
+        <test-method is-config="true" signature="logTestStart(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:54:08 MSK" name="logTestStart" finished-at="2025-04-11T09:54:08 MSK" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ru.mzpo.tests.MzpoTests.TestWrite2Us_MZPO()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4e8e0052]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestStart -->
+        <test-method is-config="true" signature="setTestPassed()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:54:08 MSK" name="setTestPassed" finished-at="2025-04-11T09:54:08 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestPassed -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:55:02 MSK" name="afterMethod" finished-at="2025-04-11T09:55:02 MSK" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestWrite2Us_MZPO status=SUCCESS method=MzpoTests.TestWrite2Us_MZPO()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ru.mzpo.tests.MzpoTests@1aafa419]" started-at="2025-04-11T09:55:02 MSK" name="tearDown" finished-at="2025-04-11T09:55:02 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ru.mzpo.tests.MzpoTests -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>

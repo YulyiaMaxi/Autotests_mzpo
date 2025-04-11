@@ -18,7 +18,8 @@ public class EmailSender {
         String[] to = {
                 "agroagro-123@yandex.ru",
                 "J.Guliyev@mzpo.info",
-                "j.maximova@mzpo.info"
+                "j.maximova@mzpo.info",
+                "seo@mzpo.infogit"
         };
         String from = "morskoitest@yandex.ru"; // ваш адрес электронной почты
         String host = "smtp.yandex.ru"; // SMTP сервер

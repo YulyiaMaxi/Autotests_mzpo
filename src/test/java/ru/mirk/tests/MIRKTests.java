@@ -1,6 +1,7 @@
 package ru.mirk.tests;
 
 import com.codeborne.selenide.Configuration;
+import org.testng.annotations.Test;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Step;
@@ -17,18 +18,14 @@ import org.slf4j.LoggerFactory;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.SkipException;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import ru.mirk.ui.helper.*;
 import java.lang.reflect.Method;
 import java.net.http.HttpResponse;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static ru.mzpo.SendingHttpPost.sendToAmo;
 
 public class MIRKTests {
@@ -55,7 +52,7 @@ public class MIRKTests {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "D:/chromdriver/chromedriver.exe");
 
@@ -69,7 +66,8 @@ public class MIRKTests {
         Configuration.headless = true; // Устанавливаем режим headless
         Configuration.pageLoadStrategy = "eager"; // Устанавливаем стратегию загрузки страницы
         Configuration.browserSize = "1864x1080"; // Устанавливаем размер окна
-
+        Configuration.timeout = 10000; // Увеличьте таймаут закрытия браузера до 10 секунд
+        Configuration.savePageSource = false; // Отключите сохранение источника страницы
     }
 
     @BeforeMethod
@@ -89,8 +87,10 @@ public class MIRKTests {
 
     @SneakyThrows
     @Test()
-    public void TestCallBackMIRK() {
+    public void TestCallBackMIRK(){
         open("https://mirk.msk.ru/stati");
+
+        executeJavaScript("$('.remodal.special-popup.block_has_image.remodal-is-initialized.remodal-is-opened').remove();");
         executeJavaScript("$('.mapList').remove();");
         executeJavaScript("$('.siteEnter-popup').remove();");
         executeJavaScript("$('.remodal.special-popup').remove();");
@@ -144,6 +144,40 @@ public class MIRKTests {
         } else if (status == 1 || status == 2) {
             // Тест считается пройденным при статусах 1 и 2
             System.out.println("Тест Supertester_GiftCert_MIRK прошел успешно: статус " + status);
+            // Продолжайте выполнение кода для пройденного теста
+        } else {
+            System.out.println("Получен неожиданный статус: " + status);
+            // Здесь можно добавить логику для обработки других статусов, если это необходимо
+        }
+
+        Thread.sleep(20000);
+    }
+
+
+
+    @SneakyThrows
+    @Test()
+    public void TestOrderConsultMIRK() {
+        open("https://mirk.msk.ru/");
+        executeJavaScript("$('.mapList').remove();");
+        executeJavaScript("$('.siteEnter-popup').remove();");
+        executeJavaScript("$('.remodal.special-popup').remove();");
+        executeJavaScript("$('.remodal-overlay').remove();");
+
+        String OrderConsultMirkMIRKButton = "Подарочный сертификат - Корзина";
+        orderConsultMIRKHelper.inputDataOrderConsultMIRK();
+
+        StringBuilder response = sendToAmo("{\"name\":\"Supertester_OrderConsult_MIRK\"}");
+        String responseString = response.toString(); // Преобразуем StringBuilder в String
+        System.out.println("Response: " + responseString); // Выводим ответ для отладки
+        int status = JsonPath.from(responseString).getInt("status");
+
+        // Проверка статуса теста
+        if (status == 0) {
+            throw new AssertionError("Тест Supertester_OrderConsult_MIRK упал: статус " + status); // Если статус 0, выбрасываем AssertionError
+        } else if (status == 1 || status == 2) {
+            // Тест считается пройденным при статусах 1 и 2
+            System.out.println("Тест Supertester_OrderConsult_MIRK прошел успешно: статус " + status);
             // Продолжайте выполнение кода для пройденного теста
         } else {
             System.out.println("Получен неожиданный статус: " + status);
@@ -217,39 +251,7 @@ public class MIRKTests {
         Thread.sleep(10000);
     }
 
-    @SneakyThrows
-    @Test()
-    public void TestOrderConsultMIRK() {
-        open("https://mirk.msk.ru/");
-        executeJavaScript("$('.mapList').remove();");
-        executeJavaScript("$('.siteEnter-popup').remove();");
-        executeJavaScript("$('.remodal.special-popup').remove();");
-        executeJavaScript("$('.remodal-overlay').remove();");
-
-        String OrderConsultMirkMIRKButton = "Подарочный сертификат - Корзина";
-        orderConsultMIRKHelper.inputDataOrderConsultMIRK();
-
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_OrderConsult_MIRK\"}");
-        String responseString = response.toString(); // Преобразуем StringBuilder в String
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_OrderConsult_MIRK упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_OrderConsult_MIRK прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
-
-        Thread.sleep(10000);
-    }
-
-    @SneakyThrows
+   @SneakyThrows
     @Test()
     public void TestWrite2UstMIRK() {
         open("https://mirk.msk.ru/napishite-nam");
@@ -257,9 +259,6 @@ public class MIRKTests {
         executeJavaScript("$('.siteEnter-popup').remove();");
         executeJavaScript("$('.remodal.special-popup').remove();");
         executeJavaScript("$('.remodal-overlay').remove();");
-        // executeJavaScript("$('#vk_groups').remove();");
-        // executeJavaScript("$('.remodal-overlay remodal-is-opened').remove();");
-        // executeJavaScript("$('.remodal-overlay remodal-is-opened').remove();");
 
         String Write2UsMirkMIRKButton = "Напишите нам из Контактов";
         write2UstMIRKHelper.inputDataWrite2UsMIRK();
@@ -319,40 +318,43 @@ public class MIRKTests {
         Thread.sleep(10000);
     }
 
-    @SneakyThrows
-    @Test()
-    public void TestNeedConsultMIRK() {
-        open("https://mirk.msk.ru/kafedra-meditsinskogo-massazha");
-        executeJavaScript("$('.mapList').remove();");
-        executeJavaScript("$('.siteEnter-popup').remove();");
-        executeJavaScript("$('.remodal.special-popup').remove();");
-        executeJavaScript("$('.remodal-overlay').remove();");
+      @SneakyThrows
+      @Test()
+      public void TestNeedConsultMIRK() {
+          open("https://mirk.msk.ru/kafedra-meditsinskogo-massazha");
 
-        String NeedConsultMIRKButton = "Нужна консультация";
-        needConsultMIRKHelper.inputDataNeedConsultMIRK();
+          executeJavaScript("$('.mapList').remove();");
+          executeJavaScript("$('.siteEnter-popup').remove();");
+          executeJavaScript("$('.remodal.special-popup').remove();");
+          executeJavaScript("$('.remodal-overlay').remove();");
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_NeedConsult_MIRK\"}");
-        String responseString = response.toString(); // Преобразуем StringBuilder в String
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-    // Проверка статуса теста
-    if (status == 0) {
-        throw new AssertionError("Тест Supertester_NeedConsult_MIRK упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-    } else if (status == 1 || status == 2) {
-        // Тест считается пройденным при статусах 1 и 2
-        System.out.println("Тест Supertester_NeedConsult_MIRK прошел успешно: статус " + status);
-        // Продолжайте выполнение кода для пройденного теста
-    } else {
-        System.out.println("Получен неожиданный статус: " + status);
-        // Здесь можно добавить логику для обработки других статусов, если это необходимо
-    }
+          String NeedConsultMIRKButton = "Нужна консультация";
+          needConsultMIRKHelper.inputDataNeedConsultMIRK();
 
-    Thread.sleep(10000);
-}
+          StringBuilder response = sendToAmo("{\"name\":\"Supertester_NeedConsult_MIRK\"}");
+          String responseString = response.toString(); // Преобразуем StringBuilder в String
+          System.out.println("Response: " + responseString); // Выводим ответ для отладки
+          int status = JsonPath.from(responseString).getInt("status");
+      // Проверка статуса теста
+      if (status == 0) {
+          throw new AssertionError("Тест Supertester_NeedConsult_MIRK упал: статус " + status); // Если статус 0, выбрасываем AssertionError
+      } else if (status == 1 || status == 2) {
+          // Тест считается пройденным при статусах 1 и 2
+          System.out.println("Тест Supertester_NeedConsult_MIRK прошел успешно: статус " + status);
+          // Продолжайте выполнение кода для пройденного теста
+      } else {
+          System.out.println("Получен неожиданный статус: " + status);
+          // Здесь можно добавить логику для обработки других статусов, если это необходимо
+      }
+
+      Thread.sleep(10000);
+  }
+
 @SneakyThrows
     @Test()
     public void TestApplyToCourseMIRK() {
         open("https://mirk.msk.ru/kafedra-meditsinskogo-massazha#");
+
         executeJavaScript("$('.mapList').remove();");
         executeJavaScript("$('.siteEnter-popup').remove();");
         executeJavaScript("$('.remodal.special-popup').remove();");
@@ -380,10 +382,11 @@ public class MIRKTests {
 
     Thread.sleep(10000);
 }
-@SneakyThrows
+    @SneakyThrows
     @Test()
     public void TestGetProf20MIRK() {
         open("https://mirk.msk.ru/poluchi-professiyu?supertester");
+
         executeJavaScript("$('.mapList').remove();");
         executeJavaScript("$('.siteEnter-popup').remove();");
         executeJavaScript("$('.remodal.special-popup').remove();");
@@ -397,24 +400,26 @@ public class MIRKTests {
         System.out.println("Response: " + responseString); // Выводим ответ для отладки
         int status = JsonPath.from(responseString).getInt("status");
 
-    // Проверка статуса теста
-    if (status == 0) {
-        throw new AssertionError("Тест Supertester_GetProf20%_MIRK упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-    } else if (status == 1 || status == 2) {
-        // Тест считается пройденным при статусах 1 и 2
-        System.out.println("Тест Supertester_GetProf20%_MIRK прошел успешно: статус " + status);
-        // Продолжайте выполнение кода для пройденного теста
-    } else {
-        System.out.println("Получен неожиданный статус: " + status);
-        // Здесь можно добавить логику для обработки других статусов, если это необходимо
+        // Проверка статуса теста
+        if (status == 0) {
+            throw new AssertionError("Тест Supertester_GetProf20%_MIRK упал: статус " + status); // Если статус 0, выбрасываем AssertionError
+        } else if (status == 1 || status == 2) {
+            // Тест считается пройденным при статусах 1 и 2
+            System.out.println("Тест Supertester_GetProf20%_MIRK прошел успешно: статус " + status);
+            // Продолжайте выполнение кода для пройденного теста
+        } else {
+            System.out.println("Получен неожиданный статус: " + status);
+            // Здесь можно добавить логику для обработки других статусов, если это необходимо
+        }
+
+        Thread.sleep(10000);
     }
 
-    Thread.sleep(10000);
-}
 @SneakyThrows
     @Test()
     public void TestConsultForFreeMIRK() {
         open("https://mirk.msk.ru/");
+
         executeJavaScript("$('.mapList').remove();");
         executeJavaScript("$('.siteEnter-popup').remove();");
         executeJavaScript("$('.remodal.special-popup').remove();");
@@ -442,28 +447,45 @@ public class MIRKTests {
 
             Thread.sleep(10000);
 }
-    @AfterMethod
-    public void tearDown() {
-        // Закрываем драйвер после завершения теста
-        if (driver != null) {
-            driver.quit();
+
+    /* @SneakyThrows
+    @Test()
+    public void TestWidgetMIRK() {
+        Widget_MIRK_Helper helper = new Widget_MIRK_Helper();
+
+        open("https://mirk.msk.ru/");
+
+        executeJavaScript("$('.mapList').remove();");
+        executeJavaScript("$('.siteEnter-popup').remove();");
+        executeJavaScript("$('.remodal.special-popup').remove();");
+        executeJavaScript("$('.remodal-overlay').remove();");
+        executeJavaScript("$('.wasCookieMessageShown').remove();");
+
+        helper.inputDataWidget_MIRK();
+
+// в этом тесте нет поля Имя, поэтому проверка по апи по другому имени
+        StringBuilder response = sendToAmo("{\"name\":\"Supertester_Widget_MIRK\"}");
+        String responseString = response.toString(); // Преобразуем StringBuilder в String
+        System.out.println("Response: " + responseString); // Выводим ответ для отладки
+        int status = JsonPath.from(responseString).getInt("status");
+
+// Проверка статуса теста
+        if (status == 0) {
+            throw new AssertionError("Тест Supertester_Widget_MIRK упал: статус " + status); // Если статус 0, выбрасываем AssertionError
+        } else if (status == 1 || status == 2) {
+            // Тест считается пройденным при статусах 1 и 2
+            System.out.println("Тест Supertester_Widget_MIRK прошел успешно: статус " + status);
+// Продолжайте выполнение кода для пройденного теста
+        } else {
+            System.out.println("Получен неожиданный статус: " + status);
+// Здесь можно добавить логику для обработки других статусов, если это необходимо
         }
+
+        Thread.sleep(10000);
+    }*/
+
     }
-    @AfterMethod
-    public void afterMethod(ITestResult result) {
-        // Записываем результат теста в лог
-        if (result.getStatus() == ITestResult.SUCCESS) {
-            System.out.println("Тест " + result.getName() + " прошел успешно.");
-            logger.info("Тест " + result.getName() + " прошел успешно.");
-        } else if (result.getStatus() == ITestResult.FAILURE) {
-            System.out.println("Тест " + result.getName() + " упал.");
-            logger.error("Тест " + result.getName() + " упал.");
-        } else if (result.getStatus() == ITestResult.SKIP) {
-            System.out.println("Тест " + result.getName() + " был проигнорирован.");
-            logger.warn("Тест " + result.getName() + " был проигнорирован.");
-        }
-    }
-    }
+
 
 
 

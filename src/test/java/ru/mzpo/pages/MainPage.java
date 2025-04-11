@@ -353,6 +353,7 @@ public class MainPage  {// проверяем формы заявок на гл�
         OpenDaySurnameField.setValue(OpenDay.getSurname());
         OpenDayEmailField.setValue(OpenDay.getEmail());
         OpenDayTelField.click();
+
         actions().sendKeys(BACK_SPACE).perform();
         actions().sendKeys(BACK_SPACE).perform();
         actions().sendKeys(BACK_SPACE).perform();
@@ -377,7 +378,6 @@ public class MainPage  {// проверяем формы заявок на гл�
 
         OpenDaySubmitButton.click();
     }
-
     // проверяем сообщение об отправке
     public void getModalWindowOpenDay() {
         OpenDaySuccessWindow.shouldBe(visible, Duration.ofSeconds(15));
@@ -405,12 +405,15 @@ public class MainPage  {// проверяем формы заявок на гл�
     // Методы вставки input значений полей и отправка
     public void inputDataTrialLesson() {
 
-        $(byText("Количество мест в группе ограничено, поэтому не откладывайте регистрацию. Ждем Вас!")).scrollTo();
+        $(byText("Количество мест в группе ограничено, поэтому не откладывайте регистрацию. Ждем Вас!"))
+                .shouldBe(visible, Duration.ofSeconds(2)) // Ожидание видимости
+                .scrollTo(); // Прокрутка к элементу
 
         TrialLessonNameField.setValue(TrialLesson.getName());
         TrialLessonSurnameField.setValue(TrialLesson.getSurname());
         TrialLessonEmailField.setValue(TrialLesson.getEmail());
         TrialLessonTelField.click();
+
         actions().sendKeys(BACK_SPACE).perform();
         actions().sendKeys(BACK_SPACE).perform();
         actions().sendKeys(BACK_SPACE).perform();

@@ -1,5 +1,6 @@
 package ru.mirk.ui.helper; // страница для прописывания селекторов и методов (клики и наведения), селекторов полей и методов заполнения полей
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -20,7 +21,6 @@ public class DodMIRKHelper  {
     private final SelenideElement DodFieldSurname = $(By.xpath("/html/body/div[1]/div[4]/div/main/div/div[3]/div/div[3]/div/div[2]/form/div[2]/div[2]/input"));
     private final SelenideElement DodFieldEmail = $(By.xpath("/html/body/div[1]/div[4]/div/main/div/div[3]/div/div[3]/div/div[2]/form/div[4]/div[2]/input"));
     private final SelenideElement DodSendButton = $(By.xpath("/html/body/div[1]/div[4]/div/main/div/div[3]/div/div[3]/div/div[2]/form/div[7]/button"));
-    private final SelenideElement DodSelect= $$(".gr-select-wrapper").findBy(text("Бесплатный пробный урок по массажу, косметологии и мед. подготовке"));  //или - для пробного урока - вставляем текст "Бесплатный пробный урок по массажу, косметологии и мед. подготовке"
 
     @Step("Методы для формы ДОД")
     // Методы вставки input значений полей и отправка
@@ -31,7 +31,12 @@ public class DodMIRKHelper  {
         DodFieldName.setValue(DodMIRK.getName());
         DodFieldTel.setValue(DodMIRK.getTel());
         DodFieldEmail.setValue(DodMIRK.getEmail());
-        DodSelect.click();
+
+        $$("select[name='d[4]'] option")
+                .filter(Condition.text("День открытых дверей")) // Фиксированная часть текста
+                .first() // Берем первый найденный элемент
+                .click(); // Кликаем на него
+
         DodSendButton.click();
     }
 }

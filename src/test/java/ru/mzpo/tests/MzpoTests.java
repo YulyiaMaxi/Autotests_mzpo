@@ -1,123 +1,51 @@
-
 package ru.mzpo.tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.Step;
-import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.path.json.JsonPath;
 import lombok.SneakyThrows;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-//import ru.mzpo.checkViaUrl.SendingHttpPost;
-import ru.education.tests.EducationTests;
-import ru.education.ui.helper.BasketPayEDUHelper;
-import ru.education.ui.helper.CallBackEDUHelper;
-import ru.education.ui.helper.ConsultEDUHelper;
-import ru.education.ui.helper.Discount15EDUHelper;
-import ru.mzpo.SendingHttpPost;
 import ru.mzpo.pages.MainPage;
-import ru.mzpo.pages.PageChecker_MZPO;
-
-import java.lang.reflect.Method;
-import java.util.Arrays;
-
+import ru.mzpo.pages.Widget_MZPO_Helper;
+import ru.mzpo.tests.api.*; // заимпортированы все классы этого пакета автоматически
+import ru.mzpo.tests.page_checker.*; // заимпортированы все классы этого пакета автоматически
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 import static ru.mzpo.SendingHttpPost.sendToAmo;
 
 
-public class MzpoTests {
+
+public class MzpoTests extends TestBase_MZPO {
     MainPage mainPage = new MainPage();
-    SendingHttpPost sendingHttpPost = new SendingHttpPost();
-    Logger logger = LoggerFactory.getLogger(MzpoTests.class);
-
-    private WebDriver driver;
-
-    @BeforeTest
-    @Step("Запускаем слушателя Allure")
-    protected void globalLogs(final ITestContext context) {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
-    }
-
-    @BeforeMethod
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:/chromdriver/chromedriver.exe");
-
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("page-load-strategy=eager");
-        options.addArguments("--headless"); // Включаем режим headless
-        options.addArguments("--disable-gpu"); // Отключаем GPU (рекомендуется для headless)
-
-        // Устанавливаем конфигурацию Selenide
-        Configuration.browser = "chrome";
-        Configuration.headless = true; // Устанавливаем режим headless
-        Configuration.pageLoadStrategy = "eager"; // Устанавливаем стратегию загрузки страницы
-        Configuration.browserSize = "1864x1080"; // Устанавливаем размер окна
-
-    }
-
-    protected boolean testPassed; // Убираем инициализацию здесь
-
-    @BeforeMethod
-    public void setTestPassed() {
-        // Код для настройки перед каждым тестом
-        testPassed = true; // Предполагаем, что тест пройдет.
-    }
-
-    @BeforeMethod
-    @Step("Запускаем логи")
-    protected void logTestStart(Method m, Object[] p) {
-        logger.info("Тест " + m.getName() + " с параметрами " + Arrays.asList(p) + " запущен:-->");
-
-    }
 
     @SneakyThrows
     @Test()
     public void TestFeedBack_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
-        executeJavaScript("$('.lp9-widget').remove();");
 
-        String feedBackButton = "Обратная связь";
+        Check_API_FeedBack checkApiFeedBack = new Check_API_FeedBack();
+
+        Page_Checker_FeedBack checker = new Page_Checker_FeedBack();
+
+        checker.checkIfPageExists();
+
+        //open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
+        //executeJavaScript("$('.lp9-widget').remove();");
+
         mainPage.inputDataFeedBack();
         mainPage.getModalWindow();
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_Feedback_MZPO\"}");
-        String responseString = response.toString(); // Преобразуем StringBuilder в String
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_FeedBack_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_Feedback_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_FeedBack.checkResponse();
 
         Thread.sleep(10000);
-
     }
 
     @SneakyThrows
-
     @Test()
     public void TestCallBack_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
+        Check_API_CallBack checkApiCallBack = new Check_API_CallBack();
+        Page_Checker_CallBack checker = new Page_Checker_CallBack();
+        //open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
+
+        checker.checkIfPageExists();
+
         executeJavaScript("$('.lp9-widget').remove();");
         //  $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
@@ -126,65 +54,43 @@ public class MzpoTests {
         String CallBackButton = "Заказать звонок";
         mainPage.inputDataCallBack();
         mainPage.getModalWindowCallBack();
+
         // Отправка запроса к AmoCRM
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_Callback_MZPO\"}");
-        String responseString = response.toString(); // Преобразуем StringBuilder в String
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_Callback_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_Callback_MZPOпрошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_CallBack.checkResponse();
 
         Thread.sleep(10000);
-
     }
 
     @SneakyThrows
     @Test()
     public void TestWrite2Us_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
-        executeJavaScript("$('.lp9-widget').remove();");
+        Check_API_Write2Us checkApiWrite2Us = new Check_API_Write2Us();
+        Page_Checker_Write2Us checker = new Page_Checker_Write2Us();
+
+        checker.checkIfPageExists();
+       // open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
+
+       // executeJavaScript("$('.lp9-widget').remove();");
 
         String write2UsButton = "Напишите нам";
         mainPage.inputDataWrite2Us();
         mainPage.getWrite2UsModalWindow();
 
         // Отправка запроса к AmoCRM
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_Write2Us_MZPO\"}");
-        String responseString = response.toString(); // Преобразуем StringBuilder в String
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_Write2Us_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_Write2Us_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
-
+        Check_API_Write2Us.checkResponse();
         Thread.sleep(10000);
-
     }
 
     @SneakyThrows
     @Test()
     public void TestGiftCert_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
+        Check_API_GiftCert checkApiGiftCert = new Check_API_GiftCert();
+        Page_Checker_GiftCert checker = new Page_Checker_GiftCert();
+
+        checker.checkIfPageExists();
+
+        //open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
         executeJavaScript("$('.lp9-widget').remove();");
         // $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
@@ -194,34 +100,22 @@ public class MzpoTests {
         String GiftCertButton = "Подарочный сертификат"; // создаем экземпляр класса
         mainPage.inputDataGiftCert();
         // mainPage.getModalWindowGiftCert();
-
         // Отправка запроса к AmoCRM
+
+        Check_API_GiftCert.checkResponse();
+
         StringBuilder response = sendToAmo("{\"name\":\"Supertester_GitfCert_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_GitfCert_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_GitfCert_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
 
         Thread.sleep(10000);
     }
 
     @SneakyThrows
-    @Test //тестируем только тогда, когда на сайте есть ДОД!!! тестируем форму в низу страницы! там нет капчи
+    @Test
     public void TestOpenDay_MZPO() {
        // open("https://www.mzpo-s.ru/activities/den-otkrytyh-dverey-v-mcpo?supertester");
-        PageChecker_MZPO checker = new PageChecker_MZPO();
+        Page_Checker_OpenDay checker = new Page_Checker_OpenDay();
+        Check_API_OpenDay checkApiOpenDay = new Check_API_OpenDay();
+
         checker.checkIfPageExists();
 
         executeJavaScript("$('.lp9-widget').remove();");
@@ -232,37 +126,25 @@ public class MzpoTests {
         //$(".modal-backdrop.fade.show").shouldBe(visible, Duration.ofSeconds(30));
         // executeJavaScript("$('.modal-backdrop.fade.show').remove();");
 
-        String OpenDay = "ДОД";
         mainPage.inputDataOpenDay();
         mainPage.getModalWindowOpenDay();
         sendingHttpPost.sendToAmo("{\"name\":\"Supertester_OpenDay_MZPO\"}");
 
         // Отправка запроса к AmoCRM
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_OpenDay_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_GitfCert_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_GitfCert_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_OpenDay.checkResponse();
 
         Thread.sleep(10000);
     }
 
     @SneakyThrows
-    @Test //тестируем только тогда, когда на сайте есть ДОД!!!
+    @Test
     public void TestTrialLesson_MZPO() {
-        open("https://www.mzpo-s.ru/activities/besplatnyy-probnyy-urok?supertester");
+        Check_API_TrialLesson checkApiTrialLesson = new Check_API_TrialLesson();
+        Page_Checker_TrialLesson checker = new Page_Checker_TrialLesson();
+
+        checker.checkIfPageExists();
+
+        //open("https://www.mzpo-s.ru/activities/besplatnyy-probnyy-urok?supertester");
         executeJavaScript("$('.lp9-widget').remove();");
         //  $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
@@ -273,58 +155,31 @@ public class MzpoTests {
         mainPage.inputDataTrialLesson();
         mainPage.getModalWindowTrialLesson();
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_TrialLesson_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_TrialLesson_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_TrialLesson_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_TrialLesson.checkResponse();
 
         Thread.sleep(10000);
     }
 
     @SneakyThrows
-    @Test //тестируем только тогда, когда на сайте есть ДОД!!!
+    @Test
     public void TestDiscount_15_MZPO() {
-        open("https://www.mzpo-s.ru/promotions/skidka15-podarok?supertester");
+        Check_API_Discount15 checkApiDiscount15 = new Check_API_Discount15();
+        Page_Checker_Discount15 checker = new Page_Checker_Discount15();
+
+        checker.checkIfPageExists();
+
+       // open("https://www.mzpo-s.ru/promotions/skidka15-podarok?supertester");
+
         executeJavaScript("$('.lp9-widget').remove();");
         //  $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
         //$(".modal-backdrop.fade.show").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('.modal-backdrop.fade.show').remove();");
 
-        String Discount15 = "Демо-доступ";
         mainPage.inputDataDiscount_15();
         mainPage.getModalWindowDiscount_15();
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_Discount_15_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_Discount_15_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_Discount_15_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_Discount15.checkResponse();
 
         Thread.sleep(10000);
     }
@@ -332,7 +187,12 @@ public class MzpoTests {
     @SneakyThrows
     @Test
     public void TestSportPaket_MZPO() {
-        open("https://www.mzpo-s.ru/promotions/sportivnyy-paket?supertester");
+        //open("https://www.mzpo-s.ru/promotions/sportivnyy-paket?supertester");
+        Page_Checker_SportPaket checker = new Page_Checker_SportPaket();
+        Check_API_SportPaket check_API = new Check_API_SportPaket();
+
+        checker.checkIfPageExists();
+
         executeJavaScript("$('.lp9-widget').remove();");
         //  $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
@@ -342,23 +202,7 @@ public class MzpoTests {
         mainPage.inputDataSportPaket();
         mainPage.getModalWindowSportPaket();
 
-       StringBuilder response = sendToAmo("{\"name\":\"Supertester_SportPaket_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_SportPaket_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_SportPaket_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_SportPaket.checkResponse();
 
         Thread.sleep(10000);
     }
@@ -366,7 +210,13 @@ public class MzpoTests {
     @SneakyThrows
     @Test
     public void TestConsult_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/massag/massag-i-reabilitaciya/klassicheskiy-massazh?supertester");
+        Page_Checker_Consult checker = new Page_Checker_Consult();
+        Check_API_Consult check_API = new  Check_API_Consult();
+
+        checker.checkIfPageExists();
+
+        //open("https://www.mzpo-s.ru/faculties/massag/massag-i-reabilitaciya/klassicheskiy-massazh?supertester");
+
         executeJavaScript("$('.lp9-widget').remove();");
         //  $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
@@ -376,23 +226,7 @@ public class MzpoTests {
         mainPage.inputDataConsult();
         mainPage.getModalWindowConsult();
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_Consult_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_Consult_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_Consult_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_Consult.checkResponse();
 
         Thread.sleep(10000);
     }
@@ -412,8 +246,13 @@ public class MzpoTests {
     @SneakyThrows
     @Test
     public void TestNMO_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/nmo?supertester");
-        executeJavaScript("$('.lp9-widget').remove();");
+        //open("https://www.mzpo-s.ru/faculties/nmo?supertester");
+        Page_Checker_NMO checker = new Page_Checker_NMO();
+        Check_API_NMO check_API = new Check_API_NMO();
+
+        checker.checkIfPageExists();
+
+        //executeJavaScript("$('.lp9-widget').remove();");
         // $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
         //$(".modal-backdrop.fade.show").shouldBe(visible, Duration.ofSeconds(30));
@@ -423,23 +262,7 @@ public class MzpoTests {
         mainPage.inputDataNMO();
         mainPage.getModalWindowNMO();
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_NMO_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_NMO_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_NMO_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_NMO.checkResponse();
 
         Thread.sleep(10000);
     }
@@ -447,8 +270,13 @@ public class MzpoTests {
     @SneakyThrows
     @Test
     public void Test13HardChoice_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/distancionnoe-obuchenie?supertester");
-        executeJavaScript("$('.lp9-widget').remove();");
+        //open("https://www.mzpo-s.ru/faculties/distancionnoe-obuchenie?supertester");
+        Page_Checker_HardChoice checker = new Page_Checker_HardChoice();
+        Check_API_HardChoice check_api = new Check_API_HardChoice();
+
+        checker.checkIfPageExists();
+
+       // executeJavaScript("$('.lp9-widget').remove();");
         // $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //   executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
         //$(".modal-backdrop.fade.show").shouldBe(visible, Duration.ofSeconds(30));
@@ -457,23 +285,7 @@ public class MzpoTests {
         mainPage.inputDataHardChoice();
         mainPage.getModalWindowHardChoice();
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_HardChoice_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_HardChoice_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_HardChoice_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_HardChoice.checkResponse();
 
         Thread.sleep(10000);
     }
@@ -481,58 +293,47 @@ public class MzpoTests {
     @SneakyThrows
     @Test
     public void TestBasketPay_MZPO() {
-        open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
-        executeJavaScript("$('.lp9-widget').remove();");
+        //open("https://www.mzpo-s.ru/faculties/podarochnye-sertifikaty?supertester");
+
+        Page_Checker_Basket checker = new Page_Checker_Basket();
+        Check_API_Basket check_api = new Check_API_Basket();
+
+        checker.checkIfPageExists();
+
+       // executeJavaScript("$('.lp9-widget').remove();");
         // $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
         //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
         //$(".modal-backdrop.fade.show").shouldBe(visible, Duration.ofSeconds(30));
         //   executeJavaScript("$('.modal-backdrop.fade.show').remove();");
 
-        String Basket = "Корзина Купить";
         mainPage.inputDataBasket();
 
-        StringBuilder response = sendToAmo("{\"name\":\"Supertester_Basket_MZPO\"}");// оскольку метод sendToAmo включает и отправку, и ответ от сервера, то задержку поставила внутри метода этого
-
-        String responseString = String.valueOf(response);
-        System.out.println("Response: " + responseString); // Выводим ответ для отладки
-        int status = JsonPath.from(responseString).getInt("status");
-
-        // Проверка статуса теста
-        if (status == 0) {
-            throw new AssertionError("Тест Supertester_HardChoice_MZPO упал: статус " + status); // Если статус 0, выбрасываем AssertionError
-        } else if (status == 1 || status == 2) {
-            // Тест считается пройденным при статусах 1 и 2
-            System.out.println("Тест Supertester_HardChoice_MZPO прошел успешно: статус " + status);
-            // Продолжайте выполнение кода для пройденного теста
-        } else {
-            System.out.println("Получен неожиданный статус: " + status);
-            // Здесь можно добавить логику для обработки других статусов, если это необходимо
-        }
+        Check_API_Basket.checkResponse();
 
         Thread.sleep(10000);
     }
 
-    @AfterMethod
-    public void tearDown() {
-        // Закрываем драйвер после завершения теста
-        if (driver != null) {
-            driver.quit();
-        }
-    }
-    @AfterMethod
-    public void afterMethod(ITestResult result) {
-        // Записываем результат теста в лог
-        if (result.getStatus() == ITestResult.SUCCESS) {
-            System.out.println("Тест " + result.getName() + " прошел успешно.");
-            logger.info("Тест " + result.getName() + " прошел успешно.");
-        } else if (result.getStatus() == ITestResult.FAILURE) {
-            System.out.println("Тест " + result.getName() + " упал.");
-            logger.error("Тест " + result.getName() + " упал.");
-        } else if (result.getStatus() == ITestResult.SKIP) {
-            System.out.println("Тест " + result.getName() + " был проигнорирован.");
-            logger.warn("Тест " + result.getName() + " был проигнорирован.");
-        }
-    }
+  /*  @SneakyThrows
+    @Test
+    public void TestWidget_MZPO() {
+        open("https://www.mzpo-s.ru/svedeniya-ob-obrazovatelnoj-organizatsii");
+       // Page_Checker_SportPaket checker = new Page_Checker_SportPaket();
+       // Check_API_SportPaket check_API = new Check_API_SportPaket();
+        Widget_MZPO_Helper widget = new Widget_MZPO_Helper();
+       // checker.checkIfPageExists();
+
+       // executeJavaScript("$('.lp9-widget').remove();");
+        //  $("#loadModal").shouldBe(visible, Duration.ofSeconds(30));
+        //  executeJavaScript("$('#loadModal').remove();"); // отключаем модалку
+        //$(".modal-backdrop.fade.show").shouldBe(visible, Duration.ofSeconds(30));
+        //  executeJavaScript("$('.modal-backdrop.fade.show').remove();");
+
+        widget.inputDataWidget_MZPO();
+
+       // Check_API_SportPaket.checkResponse();
+
+        Thread.sleep(10000);
+    }*/
 
 }
 

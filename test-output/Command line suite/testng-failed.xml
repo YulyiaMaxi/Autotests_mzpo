@@ -3,28 +3,28 @@
 <suite name="Failed suite [Command line suite]">
   <test thread-count="5" name="Command line test(failed)">
     <classes>
+      <class name="ru.education.tests.EducationTests">
+        <methods>
+          <include name="TestDiscount15EDU"/>
+          <include name="logTestStart"/>
+          <include name="setTestPassed"/>
+          <include name="tearDown"/>
+          <include name="globalLogs"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- ru.education.tests.EducationTests -->
       <class name="ru.mzpo.tests.MzpoTests">
         <methods>
-          <include name="TestOpenDay_MZPO"/>
+          <include name="globalLogs"/>
+          <include name="setTestPassed"/>
           <include name="afterMethod"/>
           <include name="setUp"/>
-          <include name="globalLogs"/>
-          <include name="tearDown"/>
-          <include name="setTestPassed"/>
           <include name="logTestStart"/>
+          <include name="TestBasketPay_MZPO"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- ru.mzpo.tests.MzpoTests -->
-      <class name="ru.mirk.tests.MIRKTests">
-        <methods>
-          <include name="setTestPassed"/>
-          <include name="logTestStart"/>
-          <include name="globalLogs"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="afterMethod"/>
-          <include name="TestDodMIRK"/>
-        </methods>
-      </class> <!-- ru.mirk.tests.MIRKTests -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

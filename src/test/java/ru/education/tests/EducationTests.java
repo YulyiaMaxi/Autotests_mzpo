@@ -43,8 +43,7 @@ import java.util.Arrays;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static ru.mzpo.SendingHttpPost.sendToAmo;
 
 
@@ -67,7 +66,7 @@ public class EducationTests /*extends TestBaseEDU*/ {
 
     }
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "D:/chromdriver/chromedriver.exe");
 
@@ -81,15 +80,12 @@ public class EducationTests /*extends TestBaseEDU*/ {
         Configuration.headless = true; // Устанавливаем режим headless
         Configuration.pageLoadStrategy = "eager"; // Устанавливаем стратегию загрузки страницы
         Configuration.browserSize = "1864x1080"; // Устанавливаем размер окна
+        Configuration.timeout = 10000; // Увеличьте таймаут закрытия браузера до 10 секунд
+        //Configuration.reportsFolder = "target/surefire-reports"; // Укажите папку для отчетов
+        Configuration.savePageSource = false; // Отключите сохранение источника страницы
 
     }
-
-    // Метод для открытия URL и установки размера окна
-    // private void openAndSetWindowSize(String url) {
-    //  driver.get(url);
-    // Устанавливаем размер окна на 1864x1080
-    //  driver.manage().window().setSize(new Dimension(1864, 1080));
-
+ 
     @BeforeMethod
     @Step("Запускаем логи")
     protected void logTestStart(Method m, Object[] p) {
@@ -260,11 +256,11 @@ public class EducationTests /*extends TestBaseEDU*/ {
         Thread.sleep(10000);
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         // Закрываем драйвер после завершения теста
         if (driver != null) {
-            driver.quit();
+            closeWebDriver(); // Закрывает текущий WebDriver
         }
     }
 
@@ -274,9 +270,12 @@ public class EducationTests /*extends TestBaseEDU*/ {
         if (result.getStatus() == ITestResult.SUCCESS) {
             System.out.println("Тест " + result.getName() + " прошел успешно.");
             logger.info("Тест " + result.getName() + " прошел успешно.");
-        } else {
+        } else if (result.getStatus() == ITestResult.FAILURE) {
             System.out.println("Тест " + result.getName() + " упал.");
             logger.error("Тест " + result.getName() + " упал.");
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            System.out.println("Тест " + result.getName() + " был проигнорирован.");
+            logger.warn("Тест " + result.getName() + " был проигнорирован.");
         }
     }
 }
